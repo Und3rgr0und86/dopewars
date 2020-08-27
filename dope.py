@@ -30,7 +30,7 @@ class Player:
 		self.name = name
 	cash = 150
 	
-	_Wheeze = 1
+	_Wood = 1
 	_Stimpak = 0
 	_Jet = 0
 	_Kram = 0
@@ -42,7 +42,7 @@ class Player:
 		print " "
 		print "Cash:    ", self.cash
 		print " "
-		print "Wheeze:  ", self._Wheeze
+		print "Wood:  ", self._Wood
 		print "Stimpak: ", self._Stimpak
 		print "Jet:     ", self._Jet
 		print "Kram:    ", self._Kram
@@ -82,7 +82,7 @@ class Map:
 		print "Downers: ",self.downer,"X"
 		print "PainKillers: ",self.painkiller,"X"
 		print " "
-		print "Wheeze: ",float(Wheeze.price)*float(self.downer),"$"
+		print "Wood: ",float(Wood.price)*float(self.downer),"$"
 		print "Stimpak: ",float(Stimpak.price)*float(self.painkiller),"$"
 		print "Jet: ",float(Jet.price)*float(self.upper),"$"
 		print "----"
@@ -147,11 +147,11 @@ def Sell():
 		print "Please enter an integer for the amount."
 		print " "
 
-	if (item == "Wheeze"):
+	if (item == "Wood"):
 		found = True
-		if(p1._Wheeze >= int(amt)):
+		if(p1._Wood >= int(amt)):
 			price = (float(Wheeze.price)*m1.downer)*float(amt)
-			p1._Wheeze = p1._Wheeze -int(amt)
+			p1._Wood = p1._Wood -int(amt)
 			p1.cash = p1.cash + (price)
 			print "Sold",item,"for",price
 			print " "
@@ -197,11 +197,11 @@ def Buy():
 		print "Please enter an integer for the amount."
 		print " "
 
-	if (item == "Wheeze"):
+	if (item == "Wood"):
 		found = True
 		price = (float(Wheeze.price)*m1.downer)*float(amt)
 		if(p1.cash >= price):
-			p1._Wheeze = p1._Wheeze +int(amt)
+			p1._Wood = p1._Wood +int(amt)
 			p1.cash = p1.cash - (price)
 			print "Bought",item,"for",price
 			print " "
@@ -273,7 +273,7 @@ def GameLoop():
 
 		#print (i)
 #ITEMS
-Wheeze = Item('Wheeze','Downer','20','The chronic, the good shit. Classic. Smoked or eaten for a relaxing effect that lasts a few hours.')
+Wood = Item('Weed','reefah','Marijuana' 'The chronic, the good shit you roll up and put in a bong or eat it as edibles.')
 Stimpak = Item('Stimpak','Pain-Killer','50','Keeps you going through the show, but not much longer.')
 Jet = Item('Jet','Upper','25','Jibbidajibbidajibbida')
 
@@ -287,8 +287,9 @@ m1 = Map(Arrival,Victory,Arrival,Boost)
 
 
 
-print color.BOLD + color.CYAN + "W E L C O M E  T O  C Y B E R - D O P E - W A R S  A L P H A" +color.END
+print color.BOLD + color.CYAN + "W E L C O M E  T O  C Y B E R - D O P E - W A R S " +color.END
 print color.BOLD + color.YELLOW + "A Cyber-Punk Drug Dealing Sim By Mathieu Dombrock" +color.END
+print color.BOLD + color.RED + "Redone by JARhead. Mathieu provided to code. I'm just redoin' it. Thanks, Bruh." +color.END
 Help()
 print " "
 print " "
