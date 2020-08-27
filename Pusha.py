@@ -31,8 +31,8 @@ class Player:
 	cash = 150
 	
 	_Wood = 1
-	_Stimpak = 0
-	_Jet = 0
+	_Vicoden = 0
+	_Yoda = 0
 	_Kram = 0
 	_LSX = 0
 
@@ -43,8 +43,8 @@ class Player:
 		print "Cash:    ", self.cash
 		print " "
 		print "Wood:  ", self._Wood
-		print "Stimpak: ", self._Stimpak
-		print "Jet:     ", self._Jet
+		print "Vicoden: ", self._Vicoden
+		print "Yoda:     ", self._Yoda
 		print "Kram:    ", self._Kram
 		print "LSX:     ", self._LSX
 		print " "
@@ -83,8 +83,8 @@ class Map:
 		print "PainKillers: ",self.painkiller,"X"
 		print " "
 		print "Wood: ",float(Wood.price)*float(self.downer),"$"
-		print "Stimpak: ",float(Stimpak.price)*float(self.painkiller),"$"
-		print "Jet: ",float(Jet.price)*float(self.upper),"$"
+		print "Vicoden: ",float(Vicoden.price)*float(self.painkiller),"$"
+		print "Yoda: ",float(Yoda.price)*float(self.upper),"$"
 		print "----"
 		print " "
 
@@ -150,7 +150,7 @@ def Sell():
 	if (item == "Wood"):
 		found = True
 		if(p1._Wood >= int(amt)):
-			price = (float(Wheeze.price)*m1.downer)*float(amt)
+			price = (float(Wood.price)*m1.downer)*float(amt)
 			p1._Wood = p1._Wood -int(amt)
 			p1.cash = p1.cash + (price)
 			print "Sold",item,"for",price
@@ -159,22 +159,22 @@ def Sell():
 			print "You don't have enough of that!"
 			print " "
 
-	elif (item == "Jet"):
+	elif (item == "Yoda"):
 		found = True
-		if(p1._Jet >= int(amt)):
-			price = (float(Jet.price)*m1.upper)*float(amt)
-			p1._Jet = p1._Jet -int(amt)
+		if(p1._Yoda >= int(amt)):
+			price = (float(Yoda.price)*m1.upper)*float(amt)
+			p1._Yoda = p1._Yoda -int(amt)
 			p1.cash = p1.cash + (price)
 			print "Sold",item,"for",price
 		else:
 			print "You don't have enough of that!"
 			print " "
 
-	elif (item == "Stimpak"):
+	elif (item == "Vicoden"):
 		found = True
-		if(p1._Stimpak >= int(amt)):
-			price = (float(Stimpak.price)*m1.painkiller)*float(amt)
-			p1._Stimpak = p1._Stimpak -int(amt)
+		if(p1._Vicoden >= int(amt)):
+			price = (float(Vicoden.price)*m1.painkiller)*float(amt)
+			p1._Vicoden = p1._Vicoden -int(amt)
 			p1.cash = p1.cash + (price)
 			print "Sold",item,"for",price
 		else:
@@ -199,7 +199,7 @@ def Buy():
 
 	if (item == "Wood"):
 		found = True
-		price = (float(Wheeze.price)*m1.downer)*float(amt)
+		price = (float(Wood.price)*m1.downer)*float(amt)
 		if(p1.cash >= price):
 			p1._Wood = p1._Wood +int(amt)
 			p1.cash = p1.cash - (price)
@@ -209,22 +209,22 @@ def Buy():
 			print "You don't have enough cash to buy that!"
 			print " "
 
-	elif (item == "Jet"):
+	elif (item == "Yayo"):
 		found = True
 		price = (float(Jet.price)*m1.upper)*float(amt)
 		if(p1.cash >= price):
-			p1._Jet = p1._Jet +int(amt)
+			p1._Yoda = p1._Yoda +int(amt)
 			p1.cash = p1.cash - (price)
 			print "Bought",item,"for",price
 		else:
 			print "You don't have enough cash to buy that!"
 			print " "
 
-	elif (item == "Stimpak"):
+	elif (item == "Vicoden"):
 		found = True
-		price = (float(Stimpak.price)*m1.painkiller)*float(amt)
+		price = (float(Vicoden.price)*m1.painkiller)*float(amt)
 		if(p1.cash >= price):
-			p1._Stimpak = p1._Stimpak +int(amt)
+			p1._Vicoden = p1._Vicoden +int(amt)
 			p1.cash = p1.cash - (price)
 			print "Bought",item,"for",price
 		else:
@@ -274,8 +274,8 @@ def GameLoop():
 		#print (i)
 #ITEMS
 Wood = Item('Weed','reefah','Marijuana' 'The chronic, the good shit you roll up and put in a bong or eat it as edibles.')
-Stimpak = Item('Stimpak','Pain-Killer','50','Keeps you going through the show, but not much longer.')
-Jet = Item('Jet','Upper','25','Jibbidajibbidajibbida')
+Vicoden = Item('Percs','Pain-Killer','50','Keeps you going through the show, but not much longer.')
+Yoda = Item('White girl','Cocina','Coke','Powder')
 
 #CITY
 Victory = City("Victory","Victory is an arcology that was built recently to deal with overcrowding within the \“old cities\”. The arcology presents a patently false illusion of idyllic country life to appease their jaded residents. \n \nThe city is controlled by a Chairman who is selected by a democratically elected \"Council\". The current Chairman, Gotthold, accepts bribes from Kenshiro CyberSystems and is focused on staying in power, no matter what. Gotthold is a Bored Bureaucrat.\n \nArmed vigilante gangs make up the core of law enforcement of Victory. These gangs are very unprofessional, but are highly dedicated to protecting \“law and order\”. The police is focused on suppressing the growing \"anti-globalization\" movement, which has been implicated in assassinations. The leader of the movement is Li Wu, an Useless Boss. According to police records, Li Wu is being funded by Psychobank.\n \nThe education system in Victory focuses on economic dogma; employees can parrot meaningless slogans and recite corporate creeds by heart.\n \nVictory has a booming industrial sector, but its environmental record is horrible.")
