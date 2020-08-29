@@ -124,7 +124,7 @@ def Travel():
 				found = True
 				city = m1.cities[x]
 		if(found == False):
-			print "I can't find this place."
+			print "Where the fuck is that at?"
 			print " "
 		else:
 			print "Traveling to ", destination," for",cost,"$";
@@ -132,7 +132,7 @@ def Travel():
 			p1.cash = p1.cash - cost
 			m1.travel(city)
 	else:
-		print "you are too broke to travel! Try again later..."
+		print "You don't have the cash to move around. Make some moves then get it."
 		print " "
 
 def Sell():
@@ -150,7 +150,7 @@ def Sell():
 	if (item == "Wood"):
 		found = True
 		if(p1._Wood >= int(amt)):
-			price = (float(Wheeze.price)*m1.downer)*float(amt)
+			price = (float(Wood.price)*m1.downer)*float(amt)
 			p1._Wood = p1._Wood -int(amt)
 			p1.cash = p1.cash + (price)
 			print "Sold",item,"for",price
@@ -189,7 +189,7 @@ def Buy():
 	found = False
 	item = raw_input("Buy what?: ")
 	item = item.title()
-	amt = raw_input("Ok, how much do you want to buy?: ")
+	amt = raw_input("Aiight, how much do you want to buy?: ")
 	if(amt.isdigit()==True):
 		print "Buying",float(amt),"",item,"."
 		print " "
@@ -206,7 +206,7 @@ def Buy():
 			print "Bought",item,"for",price
 			print " "
 		else:
-			print "You don't have enough cash to buy that!"
+			print "You don't have enough cash to cop that!"
 			print " "
 
 	elif (item == "Yoda"):
@@ -217,7 +217,7 @@ def Buy():
 			p1.cash = p1.cash - (price)
 			print "Bought",item,"for",price
 		else:
-			print "You don't have enough cash to buy that!"
+			print "You don't have enough cash to cop that!"
 			print " "
 
 	elif (item == "Percs"):
@@ -228,7 +228,7 @@ def Buy():
 			p1.cash = p1.cash - (price)
 			print "Bought",item,"for",price
 		else:
-			print "You don't have enough cash to buy that!"
+			print "You don't have enough cash to cop that!"
 			print " "
 
 	else:
@@ -268,7 +268,7 @@ def GameLoop():
 				print "\n"	
 		#unknown command
 		else:
-			print "Unknown Command!"
+			print "What the fuck is this? Try again, man."
 			print " "
 
 		#print (i)
@@ -289,7 +289,7 @@ m1 = Map(Arrival,Victory,Arrival,Boost)
 
 print color.BOLD + color.CYAN + "W E L C O M E  T O  C Y B E R - D O P E - W A R S " +color.END
 print color.BOLD + color.YELLOW + "A Cyber-Punk Drug Dealing Sim By Mathieu Dombrock" +color.END
-print color.BOLD + color.RED + "Redone by 0din Darko. Mathieu provided to code. I'm just redoing it. Thanks, Bruh." +color.END
+print color.BOLD + color.RED + "Redone by 0din. Mathieu provided to code. I'm just redoing it. Thanks, Bruh." +color.END
 Help()
 print " "
 print " "
