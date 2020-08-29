@@ -289,7 +289,7 @@ m1 = Map(Arrival,Victory,Arrival,Boost)
 
 print color.BOLD + color.CYAN + "W E L C O M E  T O  C Y B E R - D O P E - W A R S " +color.END
 print color.BOLD + color.YELLOW + "A Cyber-Punk Drug Dealing Sim By Mathieu Dombrock" +color.END
-print color.BOLD + color.RED + "Redone by 0din. Mathieu provided to code. I'm just redoing it. Thanks, Bruh." +color.END
+print color.BOLD + color.RED + "Redone by P 0din. Mathieu provided to code. I'm just redoing it. This was my favorite childhood game & my first coding project. Thanks, Bruh." +color.END
 Help()
 print " "
 print " "
