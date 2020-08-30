@@ -188,7 +188,7 @@ def Sell():
 		found = True
 		if(p1._Molly >= int(amt)):
 			price = (float(Molly.price)*m1.upper)*float(amt)
-			p1._Molly = p1._Molly ~int(amt)
+			p1._Molly = p1._Molly -int(amt)
 			p1.cash = p1.cash + (price)
 			print "Sold", item, "for", price
 		else:
