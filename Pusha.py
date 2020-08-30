@@ -33,6 +33,7 @@ class Player:
 	_Wood = 1
 	_Percs = 0
 	_Yayo = 0
+	_Molly = 0
 	_Kram = 0
 	_LSX = 0
 
@@ -45,6 +46,7 @@ class Player:
 		print "Wood:  ", self._Wood
 		print "Percs: ", self._Percs
 		print "Yayo:     ", self._Yayo
+		print "Molly:    ", self._Molly
 		print "Kram:    ", self._Kram
 		print "LSX:     ", self._LSX
 		print " "
@@ -85,6 +87,7 @@ class Map:
 		print "Wood: ",float(Wood.price)*float(self.downer),"$"
 		print "Percs: ",float(Percs.price)*float(self.painkiller),"$"
 		print "Yayo: ",float(Yayo.price)*float(self.upper),"$"
+		print "Molly",float(Molly.price)*float(self.upper),"$"
 		print "----"
 		print " "
 
@@ -132,14 +135,14 @@ def Travel():
 			p1.cash = p1.cash - cost
 			m1.travel(city)
 	else:
-		print "You don't have the cash to move around. Make some moves then get it."
+		print "You don't have the bread to move around. Make some moves then get it."
 		print " "
 
 def Sell():
 	found = False
 	item = raw_input("Sell what?: ")
 	item = item.title()
-	amt = raw_input("Ok, how much do you want to sell?: ")
+	amt = raw_input("Ok, how much do you want to get rid of?: ")
 	if(amt.isdigit()==True):
 		print "Selling",amt,"",item,"."
 		print " "
@@ -156,18 +159,18 @@ def Sell():
 			print "Sold",item,"for",price
 			print " "
 		else:
-			print "You don't have enough of that!"
+			print "You don't have the bread for that."
 			print " "
 
 	elif (item == "Yayo"):
 		found = True
-		if(p1._Jet >= int(amt)):
+		if(p1._Yayo >= int(amt)):
 			price = (float(Yayo.price)*m1.upper)*float(amt)
 			p1._Yayo = p1._Yayo -int(amt)
 			p1.cash = p1.cash + (price)
 			print "Sold",item,"for",price
 		else:
-			print "You don't have enough of that!"
+			print "You don't have the bread for that."
 			print " "
 
 	elif (item == "Percs"):
@@ -178,7 +181,18 @@ def Sell():
 			p1.cash = p1.cash + (price)
 			print "Sold",item,"for",price
 		else:
-			print "You don't have enough of that!"
+			print "You don't have the bread for that."
+			print " "
+			
+	elif (item == "Molly"):
+		found = True
+		if(p1._Molly >= int(amt)):
+			price = (float(Molly.price)*m1.upper)*float(amt)
+			p1._Molly = p1._Molly ~int(amt)
+			p1.cash = p1.cash + (price)
+			print "Sold", item, "for", price
+		else:
+			print "You don't got the bread for that."
 			print " "
 
 	else:
@@ -268,7 +282,7 @@ def GameLoop():
 				print "\n"	
 		#unknown command
 		else:
-			print "What the fuck is this? Try again, man."
+			print "What the fuck is this?"
 			print " "
 
 		#print (i)
@@ -288,7 +302,7 @@ m1 = Map(Arrival,Victory,Arrival,Boost)
 
 
 print color.BOLD + color.CYAN + "W E L C O M E  T O  C Y B E R - D O P E - W A R S " +color.END
-print color.BOLD + color.YELLOW + "A Cyber-Punk Drug Dealing Sim By Mathieu Dombrock" +color.END
+print color.BOLD + color.YELLOW + "A Drug Dealing Sim By Mathieu Dombrock" +color.END
 print color.BOLD + color.RED + "Redone by P 0din. Mathieu provided to code. I'm just redoing it. This was my favorite childhood game & my first coding project. Thanks, Bruh." +color.END
 Help()
 print " "
