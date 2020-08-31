@@ -45,10 +45,9 @@ class Player:
 		print " "
 		print "Wood:  ", self._Wood
 		print "Percs: ", self._Percs
-		print "Yayo:     ", self._Yayo
-		print "Molly:    ", self._Molly
-		print "Kram:    ", self._Kram
-		print "LSX:     ", self._LSX
+		print "Yayo:  ", self._Yayo
+		print "Molly: ", self._Molly
+		print "LSD:   ", self._LSD
 		print " "
 		print "----"
 		print " "
