@@ -287,9 +287,6 @@ def GameLoop():
 
 		#print (i)
 #ITEMS
-Wood = Item('Weed','reefah','Marijuana' 'The chronic, the good shit you roll up and put in a bong or eat it as edibles.')
-Percs = Item('Vicoden','Pain-Killer','Percocets','Keeps you going through the show, but not much longer.')
-Yoda = Item('White Girl','Upper','Coke','Yoda')
 
 #CITY
 Victory = City("Victory","Victory is an arcology that was built recently to deal with overcrowding within the \“old cities\”. The arcology presents a patently false illusion of idyllic country life to appease their jaded residents. \n \nThe city is controlled by a Chairman who is selected by a democratically elected \"Council\". The current Chairman, Gotthold, accepts bribes from Kenshiro CyberSystems and is focused on staying in power, no matter what. Gotthold is a Bored Bureaucrat.\n \nArmed vigilante gangs make up the core of law enforcement of Victory. These gangs are very unprofessional, but are highly dedicated to protecting \“law and order\”. The police is focused on suppressing the growing \"anti-globalization\" movement, which has been implicated in assassinations. The leader of the movement is Li Wu, an Useless Boss. According to police records, Li Wu is being funded by Psychobank.\n \nThe education system in Victory focuses on economic dogma; employees can parrot meaningless slogans and recite corporate creeds by heart.\n \nVictory has a booming industrial sector, but its environmental record is horrible.")
