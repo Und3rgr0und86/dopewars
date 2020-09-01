@@ -35,7 +35,7 @@ class Player:
 	_Yayo = 0
 	_Molly = 0
 	_Kram = 0
-	_LSX = 0
+	_LSD = 0
 
 	def check_inv(self):
 		print " "
@@ -86,7 +86,8 @@ class Map:
 		print "Wood: ",float(Wood.price)*float(self.downer),"$"
 		print "Percs: ",float(Percs.price)*float(self.painkiller),"$"
 		print "Yayo: ",float(Yayo.price)*float(self.upper),"$"
-		print "Molly",float(Molly.price)*float(self.upper),"$"
+		print "Molly: ",float(Molly.price)*float(self.upper),"$"
+		print "LSD",float(LSD.price)*float(self.upper),"$"
 		print "----"
 		print " "
 
@@ -193,7 +194,17 @@ def Sell():
 		else:
 			print "You don't got the bread for that."
 			print " "
-
+	
+	elif (item == "LSD"):
+		found = True
+		if(p1._LSD >= int(amt))
+			price = (float(LSD.price)*m1.upper)*float(amt)
+			p1._LSD = p1._LSD -int-amt)
+			p1.cash = p1.cash + (price)
+			print "Sold", item, "for", price
+		else:
+			print "You don't got the bread for that."
+			print " "
 	else:
 		print "I can't find this item."
 
@@ -243,6 +254,18 @@ def Buy():
 		else:
 			print "You don't have enough cash to cop that!"
 			print " "
+			
+	elif (item == "Molly"):
+		found = True
+		price = (float(Molly.price)*m1.upper)*float(amt)
+		if(p1.cash >= price):
+			p1._Molly = p1._Molly =int(amt)
+			p1.cash = p1.cash - (price)
+			print "Bought",item,"for",price
+		else:
+			print "You don't have enough cash to cop that!"
+					print " "
+			
 
 	else:
 		print "I can't find this item."
